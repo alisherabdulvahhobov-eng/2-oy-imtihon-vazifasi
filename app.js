@@ -128,8 +128,8 @@ console.log(Namuna4([5, 4, 3, 2, 1]));
 console.log('105-MISOL');
 
 
-function Namuna(ichimliklar) {
-  let natija = []; // Shakarsizlar uchun bo'sh massiv
+function Namuna5(ichimliklar) {
+  let natija = [];
   
   for (let i = 0; i < ichimliklar.length; i++) {
     let ichimlik = ichimliklar[i];
@@ -143,6 +143,156 @@ function Namuna(ichimliklar) {
 }
 
 
-console.log(Namuna(["fanta", "cola", "water"]));
-console.log(Namuna(["fanta", "cola"]));
-console.log(Namuna(["lemonade", "beer", "water"]));
+console.log(Namuna5(["fanta", "cola", "water"]));
+console.log(Namuna5(["fanta", "cola"]));
+console.log(Namuna5(["lemonade", "beer", "water"]));
+
+
+// 106.Funksiya son qabul qilsa, Funksiya ushbu sonda nechta
+// raqam borligini qaytarsin.
+// Namuna:
+// Namuna(123) ➞ 3
+// Namuna(56) ➞ 2
+// Namuna(7154) ➞ 4
+// Namuna(61217311514) ➞ 11
+// Namuna(0) ➞ 1
+
+
+function Namuna6(son) {
+  return String(son).length;
+}
+
+console.log('106-MISOL');
+
+
+console.log(Namuna6(123));
+console.log(Namuna6(56));
+console.log(Namuna6(7154));
+console.log(Namuna6(61217311514));
+console.log(Namuna6(0));
+
+
+
+// 107.Funksiya son qabu qilsa, ushbu funksiya sonning raqamlari
+// o’rni istalgancha almashtirib eng katta hosil bo’lishi mumkin
+// bo’lgan sonni qaytarsin.
+// Namuna:
+// Namuna(123) ➞ 321
+// Namuna("001") ➞ 100
+// Namuna(999) ➞ 999
+// Namuna(784) ➞ 874
+
+
+
+
+function Namuna7(son) {
+  let raqamlar = String(son).split('');
+  
+  raqamlar.sort();
+  raqamlar.reverse();
+  
+  return Number(raqamlar.join(''));
+}
+
+console.log('107-MISOL');
+
+console.log(Namuna7(123));
+console.log(Namuna7("001"));
+console.log(Namuna7(635));
+console.log(Namuna7(784));
+
+
+
+
+
+// 108.Funksiya 2ta sonlar oralig’ini qabul qiladi. Funksiya ushbu
+// oraliqdan bironta random son qaytarsin.
+// Namuna:
+// Namuna(5, 9) ➞ 7
+// Namuna(5, 9) ➞ 9
+// Namuna(5, 9) ➞ 5
+
+
+
+
+
+function Namuna8(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log('108-MISOL');
+
+
+console.log(Namuna8(5, 9));
+console.log(Namuna8(5, 9)); 
+console.log(Namuna8(5, 9));
+
+
+
+
+
+
+
+// 109.Funksiya son qabul qiladi. Ushbu funksiya ushbu son narissistik son bo’lsa true qaytarsin, aks holda false. Narissistik son
+// degani sonning har bir raqamini sonning uzunligi miqdorida
+// darajaga ko’tarib qo’shib chiqilganda o’ziga teng bo’lgan son.
+// Namuna:
+// Namuna(153) ➞ true
+// // 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+// Namuna(370) ➞ true
+// Namuna(1652) ➞ false
+
+function Namuna9(son) {
+  let matn = String(son);
+  let uzunlik = matn.length;
+  let yigindi = 0;
+  
+
+  for (let i = 0; i < uzunlik; i++) {
+    let raqam = Number(matn[i]);
+    yigindi += Math.pow(raqam, uzunlik);
+  }
+  
+  return yigindi === son;
+}
+
+console.log('109-MISOL');
+
+
+console.log(Namuna9(153));
+console.log(Namuna9(370));
+console.log(Namuna9(1652));
+
+
+
+
+// 110.Funksiya string qabul qiladi.Funksiya ushbu stringda
+// nechta katta harf ishtirok etganin qaytarsin.
+// Namuna:
+// Namuna("fvLzpxmgXSDrobbgMVrc") ➞ 6
+// Namuna("JMZWCneOTFLWYwBWxyFw") ➞ 14
+// 51
+// DASTURLASHDAN MASALALAR
+// Namuna("mqeytbbjwqemcdrdsyvq") ➞ 0
+
+
+function Namuna10(str) {
+  let sanoq = 0;
+  
+  for (let i = 0; i < str.length; i++) {
+    let harf = str[i];
+
+    if (harf === harf.toUpperCase() && harf !== harf.toLowerCase()) {
+      sanoq++;
+    }
+  }
+  
+  return sanoq;
+}
+
+console.log('110-MISOL');
+
+
+console.log(Namuna10("fvLzpxmgXSDrobbgMVrc"));
+console.log(Namuna10("JMZWCneOTFLWYwBWxyFw"));
+console.log(Namuna10("mqeytbbjwqemcdrdsyvq"));
