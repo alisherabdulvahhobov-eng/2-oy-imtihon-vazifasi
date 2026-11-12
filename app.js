@@ -4,6 +4,8 @@
 // Namuna("p*1") ➞ "<p></p>"
 // Namuna("li*3") ➞ "<li></li><li></li><li></li>"
 
+console.log('110-MISOL');
+
 
 function Namuna(str) {
   let [tag, count] = str.split("*");
@@ -27,12 +29,33 @@ console.log(Namuna("li*3"));
 // namuna(7) ➞ 28
 // // 1 + 2 + 3 + ... + 7 = 28
 
+console.log('111-MISOL');
 
-function namuna1(n) {
+function Namuna1(n) {
   return (n * (n + 1)) / 2;
 }
 
 
-console.log(namuna1(3));
-console.log(namuna1(10));
-console.log(namuna1(7));
+console.log(Namuna1(3));
+console.log(Namuna1(10));
+console.log(Namuna1(7));
+
+
+// 102.Funskiya son va object qabul qiladi. Objectni ichida min va
+// max degan propertilar mavjud. Agar ushbu son min va maxni
+// oralig’ida bo’lsa funksiya true qaytarsin, aks holda false
+// Namuna:
+// Namuna(4, { min: 0, max: 5 }) ➞ true
+// Namuna(4, { min: 4, max: 5 }) ➞ true
+// Namuna(4, { min: 6, max: 10 }) ➞ false
+
+console.log('112-MISOL');
+
+function Namuna2(son, obj) {
+  return son >= obj.min && son <= obj.max;
+}
+
+
+console.log(Namuna2(4, { min: 0, max: 5 }));
+console.log(Namuna2(4, { min: 4, max: 5 }));
+console.log(Namuna2(4, { min: 6, max: 10 }));
